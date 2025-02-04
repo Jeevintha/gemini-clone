@@ -12,9 +12,9 @@ const ContextProvider = (props) => {
     const [loading,setLoading] = useState(false);
     const [resultData,setResultData] = useState("");
 
-    const delayPara = (index,NextWorld) => {
+    const delayPara = (index,NextWord) => {
         setTimeout(function () {
-            setResultData(prev=>prev+NextWorld);
+            setResultData(prev=>prev+NextWord);
         },75*index)
     }
 
@@ -57,8 +57,8 @@ const ContextProvider = (props) => {
         let newResponseArray = newResponse2.split(" ");
         for(let i=0; i<newResponseArray.length;i++)
         {
-            const nextWorld = newResponseArray[i];
-            delayPara(i,nextWorld+"")
+            const nextWord = newResponseArray[i];
+            delayPara(i,nextWord+" ")
         }
         setLoading(false)
         setInput("")
